@@ -155,7 +155,7 @@ Enquanto o Agent estiver rodando, acesse seu contêiner ros-foxy (Terminal 2) e 
 # Sem seu usuário
 alias edocker='clear && docker exec -it --user werlley -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -e LIBGL_ALWAYS_SOFTWARE=1 ros-foxy bash
 
-# Ir direto em seu usuário
+# Com seu usuário
 alias edocker='clear && docker exec -it --user werlley -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -e LIBGL_ALWAYS_SOFTWARE=1 ros-foxy bash -c "cd /home/werlley && bash"'
 
 # Dentro do conteiner
