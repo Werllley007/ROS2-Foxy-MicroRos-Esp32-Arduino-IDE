@@ -152,7 +152,17 @@ docker run -it --rm \
 Enquanto o Agent estiver rodando, acesse seu contêiner ros-foxy (Terminal 2) e utilize os comandos de teste ROS 2:
 
 ```bash
-docker exec -it --user werlley -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -e LIBGL_ALWAYS_SOFTWARE=1 ros-foxy bash
+# Sem seu usuário
+alias edocker='clear && docker exec -it --user werlley -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -e LIBGL_ALWAYS_SOFTWARE=1 ros-foxy bash
+
+# Ir direto em seu usuário
+alias edocker='clear && docker exec -it --user werlley -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -e LIBGL_ALWAYS_SOFTWARE=1 ros-foxy bash -c "cd /home/werlley && bash"'
+
+# Dentro do conteiner
+nano .bashrc
+
+# Cole no bashrc
+source ~/uros_ws/install/local_setup.bash 
 
 # Dentro do contêiner:
 ros2 topic list
